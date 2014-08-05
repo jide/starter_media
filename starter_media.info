@@ -1,0 +1,12 @@
+name = Starter: Media
+description = Starter Media.
+core = 7.x
+package = Starter
+version = 7.x-1.0
+project = starter_media
+dependencies[] = media
+dependencies[] = media_internet
+dependencies[] = media_wysiwyg
+dependencies[] = media_wysiwyg_view_mode
+features[features_api][] = api:2
+project path = sites/all/modules/features
