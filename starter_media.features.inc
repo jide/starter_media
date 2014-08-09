@@ -23,6 +23,38 @@ function starter_media_ctools_plugin_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_filter_default_formats_alter().
+ */
+function starter_media_filter_default_formats_alter(&$data) {
+  if (isset($data['filtered_html'])) {
+    $data['filtered_html']['filters']['media_filter'] = array(
+      'settings' => array(),
+      'status' => 1,
+      'weight' => 2,
+    ); /* WAS: '' */
+  }
+  if (isset($data['full_html'])) {
+    $data['full_html']['filters']['media_filter'] = array(
+      'settings' => array(),
+      'status' => 1,
+      'weight' => 2,
+    ); /* WAS: '' */
+  }
+}
+
+/**
+ * Implements hook_wysiwyg_default_profiles_alter().
+ */
+function starter_media_wysiwyg_default_profiles_alter(&$data) {
+  if (isset($data['filtered_html'])) {
+    $data['filtered_html']['settings']['buttons']['drupal']['media'] = 1; /* WAS: '' */
+  }
+  if (isset($data['full_html'])) {
+    $data['full_html']['settings']['buttons']['drupal']['media'] = 1; /* WAS: '' */
+  }
+}
+
+/**
  * Implements hook_image_default_styles().
  */
 function starter_media_image_default_styles() {
