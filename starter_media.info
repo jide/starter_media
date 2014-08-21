@@ -31,4 +31,5 @@ features[field_base][] = field_file_image_title_text
 features[field_group][] = group_content|file|image|form
 features[file_display][] = image__landscape__file_field_image
 features[image][] = landscape
+features[variable][] = title_file
 project path = sites/all/modules/features
